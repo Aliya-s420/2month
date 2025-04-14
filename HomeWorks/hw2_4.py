@@ -245,6 +245,7 @@ def start_game():
     golem = Golem('Artur', 240, 15)
     avrora = Avrora('Moon', 230, 15)
 
+
     heroes_list = [warrior_1, doc, warrior_2, magic, berserk, assistant, witcher, hacker, golem, avrora]
 
     show_statistics(boss, heroes_list)
@@ -260,6 +261,3 @@ def show_statistics(boss: Boss, heroes: list):
 
 
 start_game()
-
-
-
