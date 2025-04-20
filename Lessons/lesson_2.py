@@ -1,5 +1,3 @@
-# Hi Sensei
-
 class Animal:
     def __init__(self, name, age):
         self.__name = name
@@ -54,7 +52,7 @@ class Dog(Animal):
         super(Dog, self).__init__(name, age)
         self.__commands = commands
 
-    @propertyLesson
+    @property
     def commands(self):
         return self.__commands
 
