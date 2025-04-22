@@ -1,6 +1,6 @@
 import sqlite3
 
-connection = sqlite3.connect('''hw.db''')
+connection = sqlite3.connect('''../hw.db''')
 
 def create_table(connection,sql):
     try:
@@ -108,14 +108,14 @@ connect_to_db = connection
 if connect_to_db is not None:
     print('Connection succesfully!')
     # create_table(connect_to_db, sql_to_create_products_table)
-    #вся цена тут за кило продукта
+    # # вся цена тут за кило продукта
     # insert_products(connect_to_db, ('Tomatos_from_Kazakhstan', 90.70, 120))
     # insert_products(connect_to_db, ('Apples', 70, 80))
     # insert_products(connect_to_db, ('Aples"Golden"', 120.90, 20))
     # insert_products(connect_to_db, ('Watermelon_Osh', 20, 10))
     # insert_products(connect_to_db, ('Watermelon_Bishkek', 27.70, 50))
     # insert_products(connect_to_db, ('Potatoes', 40, 100))
-    # insert_products(connect_to_db, ('Onion', 60.60, 100)
+    # insert_products(connect_to_db, ('Onion', 60.60, 100))
     # insert_products(connect_to_db, ('Onian_violet', 90, 72))
     # insert_products(connect_to_db, ('Banana', 160.50, 140))
     # insert_products(connect_to_db, ('Dragonfruit', 200, 50))
@@ -123,15 +123,15 @@ if connect_to_db is not None:
     # insert_products(connect_to_db, ('Appricots', 100.50, 100))
     # insert_products(connect_to_db, ('Grape', 190.50, 200))
     # insert_products(connect_to_db, ('Grape_Kyrgyzstan', 160.50, 210))
-
-    """проверка функций"""
+    #
+    # """проверка функций"""
     # update_products_quantity(connect_to_db,(300,4))
     # update_products_price(connect_to_db, (100, 7))
     # delete_products(connect_to_db,5)
     # select_products(connect_to_db)
     # select_products_limit(connect_to_db,100)
     # select_products_limit2(connect_to_db,5 )
-    select_products_limit3(connect_to_db)
+    # select_products_limit3(connect_to_db)
 
 
     print("all right")
