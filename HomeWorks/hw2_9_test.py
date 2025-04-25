@@ -5,21 +5,28 @@ DB_NAME = "store_products.db"
 conn = sqlite3.connect(DB_NAME)
 cursor = conn.cursor()
 
-cursor.execute('''
+def create_table(cursor, create_table_sql):
+    try:
+        cursor.execute(create_table_sql)
+        print("Таблица успешно создана.")
+    except sqlite3.Error as e:
+        print(f"Ошибка при создании таблицы: {e}")
+
+create_categories_table_sql = '''
     CREATE TABLE IF NOT EXISTS categories (
         code TEXT PRIMARY KEY,
         title TEXT
     )
-''')
+'''
 
-cursor.execute('''
+create_stores_table_sql = '''
     CREATE TABLE IF NOT EXISTS stores (
         store_id INTEGER PRIMARY KEY,
         title TEXT
     )
-''')
+'''
 
-cursor.execute('''
+create_products_table_sql = '''
     CREATE TABLE IF NOT EXISTS products (
         id INTEGER PRIMARY KEY,
         title TEXT,
@@ -30,7 +37,11 @@ cursor.execute('''
         FOREIGN KEY (category_code) REFERENCES categories (code),
         FOREIGN KEY (store_id) REFERENCES stores (store_id)
     )
-''')
+'''
+
+create_table(cursor, create_categories_table_sql)
+create_table(cursor, create_stores_table_sql)
+create_table(cursor, create_products_table_sql)
 
 cursor.execute("SELECT COUNT(*) FROM categories")
 if cursor.fetchone()[0] == 0:
